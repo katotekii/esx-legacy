@@ -643,6 +643,10 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 				return print(("[^1ERROR^7] xPlayer.setMeta ^5value^7 should be ^5string^7 as a subIndex!"):format(value))
 			end
 
+            if not self.metadata[index] then
+				self.metadata[index] = table.create(0, 0)
+			end
+
 			self.metadata[index][value] = subValue
 		end
 
